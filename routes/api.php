@@ -16,3 +16,22 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['namespace'=>'Api'], function(){
+	Route::get('/cats',
+	[
+		'as' => 'cat.index',
+		'uses' => 'CatController@index'
+	]);
+
+	Route::post('/cats',[
+	'as' => 'cats.store',
+	'uses' => 'CatController@store'
+	]);
+
+	Route::delete('/cats/{cat}',[
+	'as' => 'cats.destroy',
+	'uses' => 'CatController@destroy'
+	]);
+
+});

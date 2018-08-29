@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/cats'; //Link muon chuyen den
 
     /**
      * Create a new controller instance.

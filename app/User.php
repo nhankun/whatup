@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //ep kieu int thanh boolean
+    protected $casts = [
+        'is_admin'=> 'boolean',
+    ];
+
+    public function IsAdministrator()
+    {
+        return $this->getAttribute('is_admin');
+    }
 }
